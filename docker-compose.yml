@@ -1,0 +1,35 @@
+services:
+  db:
+    container_name: postgres-db
+    image: postgres:14.1
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5332:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  job_tracker_api:
+    image: aseyid/job_search_app-api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/job_tracker
+    ports:
+      - "80:8080"
+    networks:
+      - db
+    depends_on:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
+

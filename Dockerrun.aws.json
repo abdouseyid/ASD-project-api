@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "job_tracker_api",
+      "image": "aseyid/job_search_app-api:latest",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_PROFILES_ACTIVE",
+          "value": "prod"
+        },
+        {
+          "name": "SPRING_DATASOURCE_URL",
+          "value": "jdbc:mysql://job-tracker-db.cqzqzqzqzqzq.us-east-1.rds.amazonaws.com:3306/job_tracker_db"
+        },
+        {
+          "name": "SPRING_DATASOURCE_USERNAME",
+          "value": "admin"
+        },
+        {
+          "name": "SPRING_DATASOURCE_PASSWORD",
+          "value": "password"
+        }
+      ]
+    }
+  ]
+}
