@@ -1,3 +1,5 @@
+demo : https://www.loom.com/share/86dbca0b646a4109a10adaf982318733?sid=9060a7e6-9042-4743-ae01-21065e0a140c
+
 Problem Statment: Job seekers frequently face challenges in organizing and managing their job search, which can lead to
 missed opportunities and inefficiencies. Many struggle to track applied positions, interview schedules, and follow-up
 tasks, resulting in a lack of structure and coordination in their job search efforts.
